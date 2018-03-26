@@ -1,0 +1,7 @@
+{
+    "name": "student/forms.lh",
+    "type": "project",
+    "require": {
+        "vlucas/valitron": "^1.4"
+    }
+}
