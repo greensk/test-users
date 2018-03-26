@@ -5,23 +5,23 @@
 <legend>Регистрация пользователя</legend>
 
 <!-- Text input-->
-<div class="form-group<?php if (isset($errors['username'])) {
+<div class="form-group<?php if (isset($errors['name'])) {
 	echo ' has-error';
   } ?>">
-  <label class="col-md-4 control-label" for="username">Имя пользователя</label>  
+  <label class="col-md-4 control-label" for="name">Имя пользователя</label>  
   <div class="col-md-4">
   <input
-	id="username"
-	name="username"
+	id="name"
+	name="name"
 	type="text"
 	placeholder=""
 	class="form-control input-md"
-	value="<?php if (isset($_POST['username'])) {
-		echo htmlspecialchars($_POST['username']);
+	value="<?php if (isset($user['name'])) {
+		echo htmlspecialchars($user['name']);
 	}?>"
   >
-    <?php if (isset($errors['username'])) {
-		foreach ($errors['username'] as $error) {
+    <?php if (isset($errors['name'])) {
+		foreach ($errors['name'] as $error) {
 			echo '<div class="help-block">' .
 				htmlspecialchars($error) . '</div>';
 		}
@@ -39,7 +39,7 @@
 	type="text"
 	placeholder=""
 	class="form-control input-md"
-	value="<?php if (isset($_POST['email'])) echo htmlspecialchars($_POST['email']); ?>"
+	value="<?php if (isset($user['email'])) echo htmlspecialchars($user['email']); ?>"
   >
 	<?php if (isset($errors['email'])) {
 		foreach ($errors['email'] as $error) {
